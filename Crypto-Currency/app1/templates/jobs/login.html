@@ -51,10 +51,16 @@ function checkform() {
                 Account Login
             </div>
             
+            {% if msg %}
+            {{ msg | safe }}
+          
+          {% endif %}  
             
             
                         <div class="auth-box__form">
                 <form method="post" name="mainform" onsubmit="return checkform()"><input type="hidden" name="form_id" value="16534651594422"><input type="hidden" name="form_token" value="df5b5ccc3ae22c97d7f3a581706924bd">
+              {% csrf_token %} 
+
                 	<input type="hidden" name="a" value="do_login">
 <input type="hidden" name="follow" value="">
 <input type="hidden" name="follow_id" value="">
@@ -62,20 +68,24 @@ function checkform() {
                         <label for="username">
                             <i class="fa fa-user"></i>
                             Username:</label>
-                        <input placeholder="Enter your username" type="text" name="username" value="" class="form__input form__input-full-width">
+                        <!-- <input placeholder="Enter your username" type="text" name="username" value="" class="form__input form__input-full-width"> -->
+                    {{ form.username }}
+
                     </div>
                     <div class="form__input-container">
                         <label for="password">
                             <i class="fa fa-key"></i>
                             Password:</label>
-                        <input placeholder="Enter your password" type="password" name="password" class="form__input form__input-full-width">
-                        <div style="padding-top: .3em">
+                        <!-- <input placeholder="Enter your password" type="password" name="password" class="form__input form__input-full-width"> -->
+                    {{ form.password }}
+
+                        <!-- <div style="padding-top: .3em">
                             <a href="forget password#">
                                 Lost your password? Recover it now!
                             </a>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="form__input-container to-right">
+                    <div class="form__input-container to-left">
                         <label for="check">
                             <input type="checkbox" name="remember" id="check">
                             keep me logged in

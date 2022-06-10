@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app1.apps.App1Config',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CryptoCurrency.urls'
-TEMPLATE_DIR = os.path.join(BASE_DIR, "app1/templates")
+TEMPLATE_DIR = os.path.join(BASE_DIR, "app1/templates/jobs")
 
 TEMPLATES = [
     {
