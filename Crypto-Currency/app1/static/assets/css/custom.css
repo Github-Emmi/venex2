@@ -215,7 +215,7 @@ label {
 .headerContainer{
     width: 100%;
     overflow: hidden;
-    background: #02273d;
+    background: #111110;
     border-bottom: 1px solid #F1DB5C;
     border-top: 1px solid #F1DB5C;
 }
@@ -232,23 +232,7 @@ label {
 	width: 172px;
 	background: url(../images/logo.png) transparent no-repeat center;
 }
-.ctn-payment{
-    width: 21%;
-    float: left;
-    margin-left: 15px;
-    padding: 2px 25px;
-    background: url(../images/hd-img.png) transparent no-repeat center;
-}
-.ctn-payment a{
-    font-size: 14px;
-    color: #253950;
-    display: inline-block;
-    padding: 15px 0px;
-    padding-left: 55px;
-    background: url(../images/hd-ic1.png) transparent no-repeat center left 8px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
+
 .hdRight{
 	float: right;
 	margin-top: 10px;
@@ -492,7 +476,7 @@ label {
 /*invesmentContainer*/
 .invesmentContainer{
 	width: 100%;
-	background:  #1b324f;
+	background:  #111110;
 	overflow: hidden;
 	padding: 50px 0;
 }
@@ -780,7 +764,7 @@ position: absolute;
 .contentTopContainer{
 	width: 100%;
 	padding: 50px 0;
-	background: #0b203c;
+	background: #111110;
 	text-align: center;
 	overflow: hidden;
 }
@@ -1142,7 +1126,7 @@ position: absolute;
 	width: 100%;
 	padding: 25px 0;
 	overflow: hidden;
-	background: #04152c;
+	background: #111110;
 }
 .fooetrInner{
 	width: 1170px;
@@ -1234,9 +1218,9 @@ font-weight: bold;
 }
 .inside_wrap{
 
-background-color: #1b324f;
+background-color: #111110;
 }
-.bannerinsideInner, .inside_inner, .member_wrap {
+.bannerinsideInner, .member_wrap {
 	max-width: 1170px;
 	width: 100%;
 	margin: 0 auto;
@@ -1246,6 +1230,10 @@ background-color: #1b324f;
 }
 .inside_inner {
 padding:45px 0;
+max-width: 1160px;
+width: 100%;
+margin: 0 auto;
+overflow: hidden;
 
 }
 
@@ -1638,15 +1626,14 @@ padding:0 10px;
 	background:#f1db5c;
 }
 
-.address, .emailblock, .phone {
+.address, .emailblock{
 	padding: 20px 20px 20px 90px;
-	width: 32%;
+	width: 42%;
 	float: left;
-	margin: 0 2% 0 0;
+	margin: 0 7% 0 0;
 	color:#fff;
 	min-height:125px;
 }
-.phone{margin:0}
 .address h2, .emailblock h2, .phone h2, h3.refheader, .security_right h3 {
 color:#f1db5c;
 font-size:21px;
@@ -1658,9 +1645,6 @@ background: url(../images/address-icon.png) no-repeat 10px 20px #223f64
 }
 .emailblock {
 background: url(../images/emailblock-icon.png) no-repeat 10px 20px #223f64
-}
-.phone {
-background: url(../images/phone-icon.png) no-repeat 10px 20px #223f64
 }
 .emailblock a, .emailblock:hover {color:#fff; text-decoration:none}
 .map {
