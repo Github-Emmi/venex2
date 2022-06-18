@@ -55,6 +55,7 @@ function checkform() {
 
 
 <form method="post" name="mainform" onsubmit="return checkform()">
+    {% csrf_token %}
 	<input type="hidden" name="form_id" value="16524368374523">
     <input type="hidden" name="form_token" value="b4736c230c19d976bdaff1c137d7eef2">
 <input type="hidden" name="a" value="support">
@@ -64,16 +65,20 @@ function checkform() {
                     <tbody><tr>
                         <td>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tbody><tr>
-                                                                        <td width="44%"><label> Your Name:</label>
-                                                                        <input type="text" name="name" value="" size="30" class="inpts">
-                                    </td>
-                                                                <td>Your Email:</td>
- <td><input type="text" name="email" value="" size="30" class="inpts"></td>
-</tr>
-<tr>
- <td colspan="2">Message:<br><br><textarea name="message" class="inpts" cols="45" rows="4"></textarea>
-</td></tr>
+                                <tbody>
+                                    <tr>
+                                         <td width="44%"><label> Your Name:</label>
+                                            <input type="text" name="name" value="" size="30" class="inpts">
+                                        </td>
+                                        <td>Your Email:</td>
+                                        <td><input type="text" name="email" value="" size="30" class="inpts"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Message:<br><br>
+                                           <textarea name="message" class="inpts" cols="45" rows="4">
+                                           </textarea>
+                                        </td>
+                                  </tr>
 <tr>
  <td>&nbsp;</td>
  <td><input type="submit" value="Send" class="sbmt"></td>
@@ -94,6 +99,10 @@ function checkform() {
         <div class="emailblock">
             <h2>Our E-mail:</h2>
             <p>venexltd@gmail.com</p>
+        </div>
+        <div class="phone">
+            <h2>Our Number:</h2>
+            <p>+234 7084538856</p>
         </div>
 
     </div>
