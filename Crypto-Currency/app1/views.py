@@ -1,3 +1,4 @@
+from turtle import setundobuffer
 from django.shortcuts import render
 
 # Create your views here.
@@ -18,7 +19,12 @@ def affiliate(request):
      return render(request, 'jobs/affiliate.html', {})         
 
 def contact(request):
-     return render(request, 'jobs/contact.html', {})
+     if request.method == "post":
+          message_name = request.POST['name']
+          message_email = request.POST['email']
+          message_body = request.POST['message']
+     else:     
+          return render(request, 'jobs/contact.html', {})
 
 def signup(request):
      return render(request, 'jobs/signup.html', {})

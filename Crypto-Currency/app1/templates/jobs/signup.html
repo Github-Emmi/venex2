@@ -41,7 +41,7 @@
     return false;
   }
   if (document.regform.password.value != document.regform.password2.value) {
-    alert("Please check your password!");
+    alert("Please check your password not identical!");
     document.regform.password2.focus();
     return false;
   }
@@ -53,7 +53,7 @@
     return false;
   }
   if (document.regform.email.value != document.regform.email1.value) {
-    alert("Please retupe your e-mail!");
+    alert("Please retype your e-mail not identical!");
     document.regform.email.focus();
     return false;
   }
@@ -110,7 +110,7 @@
   
    <form method="POST" onsubmit="return checkform()" name="regform">
     {% csrf_token %}
-    <input type="hidden" name="form_id" value="16534649454490">
+    <input type="hidden" name="form_id" value="1653464945449022">
     <input type="hidden" name="form_token" value="6ee90523fe13b19cd656e263f2de2a68">
 <input type="hidden" name="a" value="signup">
 <input type="hidden" name="action" value="signup">
@@ -192,7 +192,7 @@
                                     <tr>
           <td align="center" valign="middle">
             <input type="checkbox" name="agree" value="1">
-            I agree with <a href="https://worldfxco.com/?a=rules">Terms and conditions</a> </td> </tr> <tr>
+            I agree with <a href="#">Terms and conditions</a> </td> </tr> <tr>
           <td align="center" valign="middle">
             <input type="submit" value="Register" class="sbmt">
           </td>
