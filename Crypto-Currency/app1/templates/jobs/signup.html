@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}Signup With Venex LTD{% endblock %}
 {% block meta_keywords %}Venex LTD {% endblock %}
+{% load widget_tweaks %}
 
 {% block content %}
 
@@ -126,18 +127,18 @@
               <input placeholder="Your Full Name" type="text" name="fullname" value="" class="inpts" size="30">
             </span></td>
         </tr>
-        <tr> -->
+        <tr> -->{{ msg }}
           <td>
                         <span class="fullname">
               <!-- <input placeholder="Your User Name" type="text" name="username" value="" class="inpts" size="30"> -->
-              {{ form.username }}
+              {{ form.username|add_class:'form-control' }}
             </span></td>
         </tr>
         <tr>
           <td>              
                         <span class="email">
               <!-- <input placeholder="Your E-mail Address" type="email" name="email" value="" class="inpts" size="30"> -->
-              {{ form.email }}
+              {{ form.email|add_class:'form-control' }}
             </span>
             <span class="text-error">{{ form.email.errors }}</span>
           </td>
@@ -153,7 +154,7 @@
           <td>              
                         <span class="password">
               <!-- <input placeholder="Define Password" type="password" name="password" value="" class="inpts" size="30"> -->
-              {{ form.password1 }}
+              {{ form.password1|add_class:'form-control' }}
             </span>
             <span class="text-error">{{ form.password1.errors }}</span>
           </td>
@@ -162,7 +163,7 @@
           <td>
                         <span class="password">
               <!-- <input placeholder="Retype Password" type="password" name="password2" value="" class="inpts" size="30"> -->
-              {{ form.password2 }}
+              {{ form.password2|add_class:'form-control' }}
             </span>
             <span class="text-error">{{ form.password2.errors }}</span>
           </td>
@@ -177,10 +178,11 @@
  
             <span class="acctype">
              <div class="form__input-container">
- <input type="text" class="form__input form__input-full-width" name="pay_account[1000][Wallet Address]" value="" placeholder="Wallet Address">
-
+ <!-- <input type="text" class="form__input form__input-full-width" name="pay_account[1000][Wallet Address]" value="" placeholder="Wallet Address"> -->
+            {{ form.wallet_address|add_class:'form-control' }}
 </div>
             </span>
+            <span class="text-error">{{ form.wallet_address.errors }}</span>
             
           </td>
         </tr>
@@ -192,8 +194,10 @@
         <tr>
         <td>
             <span class="secques">
-              <input placeholder="Phone Number" type="text" name="sq" value="" class="inpts" size="30">
+              <!-- <input placeholder="Phone Number" type="text" name="sq" value="" class="inpts" size="30"> -->
+              {{ form.phone_no|add_class:'form-control' }}
             </span>
+            <span class="text-error">{{ form.wallet_address.errors }}</span>
           </td>
         </tr>
                                     <tr>

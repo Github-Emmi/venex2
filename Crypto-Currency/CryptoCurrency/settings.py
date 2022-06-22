@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-im=@_!e0%ln&s4kvcru=p+^q(gs+tv=_gaa1@l4+1+!0z1hs37
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+AUTH_USER_MODEL = 'app1.User'
 
 ALLOWED_HOSTS = []
 
@@ -53,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CryptoCurrency.urls'
+LOGOUT_REDIRECT_URL = "index"
 TEMPLATE_DIR = os.path.join(BASE_DIR, "app1/templates/jobs")
 
 TEMPLATES = [
