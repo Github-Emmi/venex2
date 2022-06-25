@@ -86,12 +86,12 @@
 </head>
 
 <body onload="myFunction()" style="zoom: 1; position: relative; min-height: 100%; top: 0px;">
-       <script>
+	{% block alert %}<script>
           function myFunction()
           {
-             alert(" A One Time Deposit Of $500 Will Qualify You To Earn An Instant 250% Of The Deposit Just After The Deposit Confirmation!!!Please Note That All Deposit/Payments Should Be Made Directly To The Company Wallet Address,No Payments/Deposits Should Be Made To Any Account Manager.The Company Will Not Be Held Responsible For Any Loss That Comes With Making Payments To Any Account Manager.Thank You For Your Understanding And Corporation.");
+			alert(" A One Time Deposit Of $500 Will Qualify You To Earn An Instant 250% Of The Deposit Just After The Deposit Confirmation!!!Please Note That All Deposit/Payments Should Be Made Directly To The Company Wallet Address,No Payments/Deposits Should Be Made To Any Account Manager.The Company Will Not Be Held Responsible For Any Loss That Comes With Making Payments To Any Account Manager.Thank You For Your Understanding And Corporation.");
           }
-</script> 
+</script>{% endblock %}
 
 	<div class="wrapper">
 		<div class="headerTopContainer">

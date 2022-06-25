@@ -3,6 +3,16 @@
 {% block title %}Signup With Venex LTD{% endblock %}
 {% block meta_keywords %}Venex LTD {% endblock %}
 
+{% block alert %}
+<script>
+    function myFunction()
+    {
+      alert("This is where your journey begins. fill the form with your appropriate data to become an official member and see your investment grow");
+    }
+</script>{% endblock %}
+
+{% block content %
+
 {% block content %}
 
 <script src="{% static 'assets/js/coingecko-coin-market-ticker-list-widget.js' %}"></script>
@@ -170,7 +180,7 @@
  
             <span class="acctype">
              <div class="form__input-container">
- <input type="text" class="form__input form__input-full-width" name="pay_account[1000][Wallet Address]" value="" placeholder="Wallet Address">
+ <input type="text" class="form__input form__input-full-width" name="wallet_address" value="" placeholder="Wallet Address">
 
 </div>
             </span>
@@ -185,7 +195,7 @@
         <tr>
         <td>
             <span class="secques">
-              <input placeholder="Phone Number" type="text" name="sq" value="" class="inpts" size="30">
+              <input placeholder="Phone Number" type="text" name="number" value="" class="inpts" size="30">
             </span>
           </td>
         </tr>

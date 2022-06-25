@@ -85,12 +85,12 @@
 	  appearance: none;
 	  -moz-appearance: none;
 	  -webkit-appearance: none;
-	  background: url(images/select_arrow.png) no-repeat right #143869;
+	  background: url(../images/select_arrow.png) no-repeat right #143869;
 	  padding: 8px 20px 8px 10px;
   }
   
   .clock-icon {
-	  background: url(images/clock.png) no-repeat left center;
+	  background: url(../images/clock.png) no-repeat left center;
 	  display: inline-block;
 	  width: 24px;
 	  background-size: 24px auto;
@@ -100,7 +100,7 @@
   }
   
   .bitcoin-icon {
-	  background: url(images/bitcoin-icon.png) no-repeat left center;
+	  background: url(../images/bitcoin-icon.png) no-repeat left center;
 	  display: inline-block;
 	  width: 24px;
 	  background-size: 24px auto;
@@ -172,7 +172,7 @@
 	  width: 100%;
   }
   .solid-hd a{
-	  background: url(images/hd-top-ic2.png) no-repeat left center;
+	  background: url(../images/hd-top-ic2.png) no-repeat left center;
 	  background-size: cover;
 	  display: inline-block;
 	  height: 25px;
@@ -237,7 +237,7 @@
 	  float: left;
 	  margin-left: 15px;
 	  padding: 2px 25px;
-	  background: url(images/hd-img.png) transparent no-repeat center;
+	  background: url(../images/hd-img.png) transparent no-repeat center;
   }
   .ctn-payment a{
 	  font-size: 14px;
@@ -245,7 +245,7 @@
 	  display: inline-block;
 	  padding: 15px 0px;
 	  padding-left: 55px;
-	  background: url(images/hd-ic1.png) transparent no-repeat center left 8px;
+	  background: url(../images/hd-ic1.png) transparent no-repeat center left 8px;
 	  font-weight: 500;
 	  text-transform: uppercase;
   }
@@ -1031,7 +1031,7 @@
 	  background: url(../images/bn-ic1.png) transparent no-repeat center top 20px;
   }
   .ctn-stt-part2{
-	  background: url(../images/bn-ic2.png) transparent no-repeat center top 20px;
+	  background: url(../images/bn-ic4.png) transparent no-repeat center top 20px;
 	  float: right;
   }
   .ctn-stt-part3{
@@ -1042,7 +1042,7 @@
 	  background: url(../images/bn-ic4.png) transparent no-repeat center top 20px;
   }
   .ctn-stt-part5{
-	  background: url(../images/bn-ic5.png) transparent no-repeat center top 20px;
+	  background: url(../images/bn-ic4.png) transparent no-repeat center top 20px;
   }
   .ctn-stt-part6{
 	  background: url(../images/bn-ic6.png) transparent no-repeat center top 20px;
@@ -1613,103 +1613,6 @@
 	  border-top: 2px solid #0b203c;
   }
   .inside_inner_account{padding:40px 0; background:#1b324f}
-  .membersidebar {
-	  float: left;
-	  width: 100%;
-	  padding: 0;
-	  background: #0b203c;
-	  margin:0 0 20px
-  }
-  .membersidebar ul {
-	  float: left;
-	  list-style: outside none none;
-	  margin: 0;
-	  width: 100%;
-	  text-align: center;
-	  padding: 5px 0;
-	  height: 52px;
-  }
-  .membersidebar ul li {
-	  padding: 0 20px 0 40px;
-	  display: inline-block;
-	  margin: 0 5px;
-	  position: relative;
-  }
-  .membersidebar ul li ul {
-	  display: none;
-	  position: absolute;
-	  top: 42px;
-	  left: 0;
-	  width: 240px;
-  }
-  .membersidebar ul li ul li {
-	  width: 100%;
-	  float: left;
-	  border-top: 1px solid #f1db5c;
-	  padding: 0 10px;
-	  margin: 0;
-	  background: #0b203c;
-  }
-  .membersidebar ul li ul li a {font-size:11px}
-  .membersidebar ul li:hover ul {display:block}
-  .membersidebar ul li a {
-	  color: #f1db5c;
-	  display: block;
-	  font-size: 14px;
-	  line-height:42px;
-	  float: left;
-	  text-transform: uppercase;
-	  font-weight: 500;
-  }
-  .membersidebar ul li:hover a {
-	  text-decoration: none;
-	  color: #fff;
-  }
-  .membersidebar ul li.one {
-	  background: url(images/menu-icon1.png) no-repeat 0 center
-  }
-  .membersidebar ul li.two {
-  background: url(images/menu-icon2.png) no-repeat 0 center
-  }
-  .membersidebar ul li.three {
-  background: url(images/menu-icon3.png) no-repeat 0 center
-  }
-  .membersidebar ul li.four {
-  background: url(images/menu-icon4.png) no-repeat 0 center
-  }
-  .membersidebar ul li.five {
-  background: url(images/menu-icon5.png) no-repeat 0 center
-  }
-  .membersidebar ul li.six {
-  background: url(images/menu-icon6.png) no-repeat 0 center
-  }
-  .member-container {
-	  width: 100%;
-	  float: left;
-	  min-height: 400px;
-	  color: #fff;
-  }
-  .account_top {
-	  padding: 15px;
-	  width: 100%;
-	  float: left;
-	  background: #f1db5c;
-  }
-  .user_left {
-	  width: 32%;
-	  float: left;
-	  padding: 8px 0 8px 75px;
-	  background: url(images/user_left.png) no-repeat left center;
-  }
-  
-  .user_left h2 {
-	  margin: 0;
-	  font-size: 20px;
-	  text-transform: uppercase;
-	  color: #223f64;
-	  line-height: 40px;
-  }
-  
   
   .get_banners {
 	  background: #0b203c;
@@ -1731,20 +1634,7 @@
   .get_banners:hover a{
   text-decoration:none;
   }
-  .member_right {
-	  background: #0b203c;
-	  width: 100%;
-	  float: left;
-	  margin: 20px 0 0 0;
-	  padding: 20px;
-  }
-  .account_overview_wrap,.account_stat {
-	  width: 100%;
-	  float: left;
-	  margin: 0;
-	  min-height: auto;
-	  padding: 0 0 20px;
-  }
+
   .ctn-inves-row {
 	  padding: 15px 15px 15px 90px;
 	  float: left;
@@ -1993,10 +1883,6 @@
 		border: 1px solid #fff;
 		transition: all 1s ease-in-out;
 	  }
-	  /*.btc_plan__wrapper .section1 .profit_box .profit.big {*/
-	  /*  font-size: 1.8rem;*/
-	  /*  font-weight: 600;*/
-	  /*}*/
 	  .btc_plan__wrapper .section2 {
 		display: flex;
 		flex-direction: row;
