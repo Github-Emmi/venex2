@@ -3,6 +3,14 @@
 {% block title %}Get Started With Venex {% endblock %}
 {% block meta_keywords %}Venex LTD contact {% endblock %}
 
+{% block alert %}
+<script>
+    function myFunction()
+    {
+      alert("Feel free to contact us anytime..!!");
+    }
+</script>{% endblock %}
+
 {% block content %}
 
 <script src="{% static 'assets/js/coingecko-coin-market-ticker-list-widget.js' %}"></script>
@@ -27,9 +35,7 @@
     <div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div class="inside_wrap">
     <div class="inside_inner">
         <div class="form-contact">
-            <h2 style="color: white">Send Us a Message</h2>
-
-
+            <h2 style="color: white">Send Us a Message: </h2>
 <script language="javascript">
 
 function checkform() {
@@ -54,12 +60,8 @@ function checkform() {
 </script>
 
 
-<form method="post" name="mainform" onsubmit="return checkform()">
+<form method="post" action="{% url 'contact' %}" name="mainform" onsubmit="return checkform()">
     {% csrf_token %}
-	<input type="hidden" name="form_id" value="16524368374523">
-    <input type="hidden" name="form_token" value="b4736c230c19d976bdaff1c137d7eef2">
-<input type="hidden" name="a" value="support">
-<input type="hidden" name="action" value="send">
                 
                 <table width="100%" border="0" cellpadding="5" cellspacing="5">
                     <tbody><tr>
@@ -102,7 +104,7 @@ function checkform() {
         </div>
         <div class="phone">
             <h2>Our Number:</h2>
-            <p>+234 7084538856</p>
+            <p>+1 612-567-2940</p>
         </div>
 
     </div>

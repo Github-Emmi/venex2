@@ -46,7 +46,7 @@ margin:0 !important;
 	text-decoration:none;
 	transition:background-color 0.1s ease-in-out;
 	margin-bottom:0;
- &:before {
+  &:before {
  content: "+";
  font-size:1.4em;
  line-height:0.5em;
@@ -68,7 +68,7 @@ color:#fff !important
 	color:#fff !important
 }
 .accordionTitle:before, .accordion__Heading:before {
-	background:url(images/faq_plus.png) no-repeat scroll left center;
+	background:url(../images/faq_plus.png) no-repeat scroll left center;
 	line-height: 24px;
 	width:34px;
 	height:24px;
@@ -84,7 +84,7 @@ color:#fff !important
 	left:4px;
 }
 .accordionTitleActive:before, .accordionTitle.is-expanded:before {
-	background:url(images/faq_minus.png) no-repeat scroll left center;
+	background:url(../mages/faq_minus.png) no-repeat scroll left center;
 	top:-2px;
 	content: "";
 }
@@ -97,7 +97,6 @@ color:#fff !important
 .accordionItem {
 	height:auto;
 	overflow:hidden;
- //SHAME: magic number to allow the accordion to animate max-height:50em;
 	transition:max-height 1s;
  @media screen and (min-width:48em) {
  max-height:15em;
@@ -156,8 +155,8 @@ width: 76%
 	width:100%
 }
 .accordion dl:focus, .accordion dl a:focus {
-	border:0px !igmportant;
-	outline:none !important
+	border:0px !important;
+	outline:none !important;
 }
 a.is-collapsed.is-expanded {
 	background-color:#0b203c !important;
