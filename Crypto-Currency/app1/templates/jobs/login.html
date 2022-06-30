@@ -41,7 +41,7 @@ function checkform() {
 <!--passing crypto values-->
 
 <script src="{% static 'assets/js/coingecko-coin-price-marquee-widget.js' %}"></script>
-<coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en" vce-ready=""></coingecko-coin-price-marquee-widget> 
+<coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin,doge" currency="usd" background-color="#ffffff" locale="en" vce-ready=""></coingecko-coin-price-marquee-widget> 
 
 <!--passing crypto values ends-->
 
@@ -57,19 +57,9 @@ function checkform() {
           
           {% endif %}  
             
-            
-<<<<<<< HEAD
                         <div class="auth-box__form">
-                <form method="post" name="mainform" onsubmit="return checkform()">
-                    {% csrf_token %}
-                    <input type="hidden" name="form_id" value="16534651594422">
-                    <input type="hidden" name="form_token" value="df5b5ccc3ae22c97d7f3a581706924bd">
-=======
-                        <!-- <div class="auth-box__form"> -->
                 <form method="post" action="" name="mainform" >
               {% csrf_token %} 
-
->>>>>>> 1c9e8f3f1f44af68e107cd23868842df07c5f6db
                 	<input type="hidden" name="a" value="do_login">
                     <input type="hidden" name="follow" value="">
                     <input type="hidden" name="follow_id" value="">

@@ -9,11 +9,13 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('signup/', views.signup, name='signup'),
     path('login/', views.login, name='login'),
-    path('about', views.about, name='about'),
+    path('about/', views.about, name='about'),
     path('started', views.started, name='started'),
     path('faq', views.faq, name='faq'),
     path('affiliate', views.affiliate, name='affiliate'),
     path('contact', views.contact, name='contact'),
+    path('sent/', views.sent, name='sent'),
+    path('terms-and-conditions/', views.terms, name='terms'),
     
 
     # dashboard

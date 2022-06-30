@@ -1,18 +1,14 @@
-<<<<<<< HEAD
 from django.core.mail import send_mail
-from django.http import HttpResponse
-=======
 import email
->>>>>>> 1c9e8f3f1f44af68e107cd23868842df07c5f6db
+from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.template import loader
 from django import template
-# from .models import profile
+# from .models import 
 from django.contrib.auth import authenticate, login as dj_login
-# from django.contrib.auth.models import User
 from django.conf import settings
 from django.forms.utils import ErrorList
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
@@ -41,34 +37,32 @@ def faq(request):
      return render(request, 'faq.html', {})      
 
 def affiliate(request):
-     return render(request, 'affiliate.html', {})         
+     return render(request, 'affiliate.html', {})
+
+def terms(request):
+     return render(request, 'terms.html', {})              
 
 def contact(request):
-<<<<<<< HEAD
-     if request.method == "POST":
+     return render(request, 'jobs/contact.html', {})     
+def sent(request):
+    if request.method == "POST":
           message_name = request.POST['name']
           message_email = request.POST['email']
-          message_body = request.POST['message']    
-           # send an email 
-          # send_mail(
-          #      'New message from ' + message_name, 
-          #      message_body,
-          #      message_email,
-          #      ['venexltd@gmail', 'aghason.emmanuel@gmail.com'],
-          # )
-          return HttpResponse("email received ")
-     else:
-          return render(request,'jobs/contact.html')
- 
-
-def signup(request):
-     return render(request, 'jobs/signup.html',)
-
-
-def login(request):
-     return render(request, 'jobs/login.html',)
-=======
-     return render(request, 'contact.html', {})
+          message = request.POST['message']
+              ######## send an email ##########
+          send_mail(
+            'New message from ' + message_name, 
+            message,
+            message_email,
+            ['jonnieerick@gmail.com', 'aghason.emmanuel@gmail.com'],
+          )
+          return render(request, '/sent.html', {
+               'message_name': message_name,
+               ' message_email': message_email,
+               'message' : message,
+               })
+    else:
+        return render(request,'jobs/index.html')
 
 def signup(request):
      msg     = ''
@@ -81,7 +75,7 @@ def signup(request):
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
-            # profile.objects.create(user=user)
+           # profile.objects.create(user=user)
             
 
             msg     = 'User created - please login.'
@@ -151,7 +145,7 @@ def investments(request):
 
 @login_required(login_url="/login/")
 def purchasePlan(request):
-    return render(request, "purchase-plan.html")
+    return render(request, "jobs/purchase-plan.html")
 
 @login_required(login_url="/login/")
 def withdraw(request):
@@ -173,10 +167,10 @@ def withdraw(request):
     
     return render(request, "withdraw.html", {'debit':updatedebit, 'msg':msg})
 
-# def calculate_amount():
-#     amount = (1/5900)*200
+def calculate_amount():
+    amount = (1/5900)*200
 
-#     print(amount)
+    print(amount)
 
 
 
@@ -297,27 +291,26 @@ def fundAccount(request):
 ####################################################################
 
           #Error page Catcher
-
+          #Daniel what should I about this commented code
 ####################################################################
 
-# @login_required(login_url="/login/")
-# def pages(request):
-#     context = {}
-#     # All resource paths end in .html.
-#     # Pick out the html file name from the url. And load that template.
-#     try:
+@login_required(login_url="/login/")
+def pages(request):
+    context = {}
+    # All resource paths end in .html.
+    # Pick out the html file name from the url. And load that template.
+    try:
         
-#         load_template = request.path.split('/')[-1]
-#         html_template = loader.get_template( load_template )
-#         return HttpResponse(html_template.render(context, request))
+        load_template = request.path.split('/')[-1]
+        html_template = loader.get_template( load_template )
+        return HttpResponse(html_template.render(context, request))
         
-#     except template.TemplateDoesNotExist:
+    except template.TemplateDoesNotExist:
 
-#         html_template = loader.get_template( 'page-404.html' )
-#         return HttpResponse(html_template.render(context, request))
+        html_template = loader.get_template( 'jobs/page-404.html' )
+        return HttpResponse(html_template.render(context, request))
 
-#     except:
+    except:
     
-#         html_template = loader.get_template( 'page-500.html' )
-#         return HttpResponse(html_template.render(context, request))
->>>>>>> 1c9e8f3f1f44af68e107cd23868842df07c5f6db
+        html_template = loader.get_template( 'jobs/page-500.html' )
+        return HttpResponse(html_template.render(context, request))
