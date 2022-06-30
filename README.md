@@ -1,2 +1,2 @@
 # mining
-websie
+this is a fictisous  investmenet website
