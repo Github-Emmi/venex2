@@ -2,8 +2,8 @@
 from django import forms
 from django.contrib.auth import get_user_model 
 # User
-# from django.conf import settings
-# from django.db.models import fields
+from django.conf import settings
+from django.db.models import fields
 from app1.models import User
 # Withdraw, fund, userwallet
 
@@ -88,13 +88,13 @@ class SignUpForm(UserCreationForm):
     #         raise ValidationError("Passwords don't match")
     #     return password2
 
-    # def save(self, commit=True):
-    #     # Save the provided password in hashed format
-    #     user = super().save(commit=False)
-    #     user.set_password(self.cleaned_data["password1"])
-    #     if commit:
-    #         user.save()
-    #     return user
+    def save(self, commit=True):
+        # Save the provided password in hashed format
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password1"])
+        if commit:
+            user.save()
+        return user
 
 
 

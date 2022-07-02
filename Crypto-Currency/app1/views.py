@@ -1,13 +1,13 @@
 from django.core.mail import send_mail
-import email
 from django.http import HttpResponse
+from .forms import SignUpForm, LoginForm, creditEditForm, DebitEditForm
 from django.shortcuts import render
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.template import loader
 from django import template
-# from .models import 
+from .models import  MyUserManager, A_User 
 from django.contrib.auth import authenticate, login as dj_login
 from django.conf import settings
 from django.forms.utils import ErrorList
@@ -46,9 +46,9 @@ def contact(request):
      return render(request, 'jobs/contact.html', {})     
 def sent(request):
     if request.method == "POST":
-          message_name = request.POST['name']
-          message_email = request.POST['email']
-          message = request.POST['message']
+          message_name = request.POST.get('name')
+          message_email = request.POST.get('email')
+          message = request.POST.get('massage')
               ######## send an email ##########
           send_mail(
             'New message from ' + message_name, 
@@ -101,7 +101,7 @@ def login(request):
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
-            if user is not None:
+            if user != None:
                 dj_login(request, user)
                 return redirect("/dashboard")
             else:    
@@ -199,7 +199,7 @@ def get_crypto_data():
   
 
     # my api key
-    'X-CMC_PRO_API_KEY': '439a6f18-ad33-459b-84e9-16b5f51c81bc',
+    'X-CMC_PRO_API_KEY': '656aab61-f229-41ab-ac8f-adf00f6ff38a',
 
     }
 
@@ -228,7 +228,7 @@ def get_crypto_data_eth():
     'Accepts': 'application/json',
     
     # my api key
-    'X-CMC_PRO_API_KEY': '439a6f18-ad33-459b-84e9-16b5f51c81bc',
+    'X-CMC_PRO_API_KEY': '656aab61-f229-41ab-ac8f-adf00f6ff38a',
 
     }
 
@@ -283,7 +283,7 @@ def fundAccount(request):
     else:
         eth_data = None
 
-    return render(request, "fund-account.html", {'credit':updatecredit, "msg": msg, 'data':btc_data, 'eth_data':eth_data })
+    return render(request, "fund-account.html", {'credit':updatecredit, "msg": msg, 'btc_data':btc_data, 'eth_data':eth_data })
 
 
 
@@ -291,7 +291,7 @@ def fundAccount(request):
 ####################################################################
 
           #Error page Catcher
-          #Daniel what should I about this commented code
+
 ####################################################################
 
 @login_required(login_url="/login/")
