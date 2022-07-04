@@ -82,23 +82,27 @@ from django.contrib.auth.models import AbstractUser
 
 amount = (
     ('none', 'Select Amount'),
-    ('200', '200'),
+    ('100', '100'),
     ('500', '500'),
+    ('600', '600'),
     ('1000', '1,000'),
+    ('2000', '2,000'),
     ('5000', '5,000'),
-    ('10000', '10,000'),
 )
 
 method = (
     ('none', 'Select Method'),
     ('BTC', 'Bitcoin'),
     ('ETH', 'Ethereum'),
-    ('USDT', 'USDT(Tether)'),
+    ('LCN', 'LiteCoin'),
+    ('DOGE', 'DogeCoin'),
+    ('DASH', 'Dash'),
+    ('ZCASH', 'ZCash'),
 )
 
 class User(AbstractUser):
     wallet_address = models.CharField(max_length=30, blank=True)
-    phone_no = models.CharField(max_length=30, blank=True)
+    phone_no = models.CharField(max_length=25, blank=True)
     fund_method = models.CharField(max_length=7, choices=method, default='none')
     fund_amount = models.CharField(max_length=15, choices=amount, default='none')
     withdrawal_amount = models.CharField(max_length=15, null=True)
