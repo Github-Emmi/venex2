@@ -72,10 +72,10 @@ WSGI_APPLICATION = 'CryptoCurrency.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Venexdb',
-        'USER' : 'postgres',
-        'PASSWORD': 'Emmanuel1999',
-        'HOST': 'localhost',
+        'NAME': 'd9r6ikr1n0hjb5',
+        'USER' : 'apanligbgiglan',
+        'PASSWORD': '3d19d39c0988e9bae84c8b49c0834733d292e2a7369284a15c4a9ac68e15fe32',
+        'HOST': 'ec2-34-239-241-121.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
