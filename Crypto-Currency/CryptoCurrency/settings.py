@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-im=@_!e0%ln&s4kvcru=p+^q(gs+tv=_gaa1@l4+1+!0z1hs37
 DEBUG = True
 AUTH_USER_MODEL = 'app1.User'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['upper-smarties-66853.herokuapp.com',]
 
 
 # Application definition
