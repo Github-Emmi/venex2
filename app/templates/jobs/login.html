@@ -56,7 +56,7 @@
             
             
                         <div class="auth-box__form">
-                <form method="post" name="mainform" onsubmit="return checkform()">
+                <form method="post" action="/do-login" name="mainform" onsubmit="return checkform()">
                     {% csrf_token %}
                     
                     {% if messages %}
@@ -73,8 +73,8 @@
                     <div class="form__input-container">
                         <label for="username">
                             <i class="fa fa-user"></i>
-                            Username:</label>
-                        <input placeholder="Enter your username" type="text" name="username" value="" class="form__input form__input-full-width">
+                            Email:</label>
+                        <input placeholder="Enter your username" type="text" name="email" value="" class="form__input form__input-full-width">
                     </div>
                     <div class="form__input-container">
                         <label for="password">

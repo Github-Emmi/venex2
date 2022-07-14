@@ -1,8 +1,10 @@
-from app import AdminView
-from . import views
+from app import views, AdminView
 from django.urls import path, re_path
 
 urlpatterns = [
+     ######                   #####
+       ###  LANDING PAGE URL   ###
+     ######                   #####
     path('', views.index, name='index'),
     path('about', views.about, name='about'),
     path('started', views.started, name='started'),
@@ -13,9 +15,12 @@ urlpatterns = [
     path('terms-and-conditions/', views.terms, name='terms'),
     path('signup/', views.signup, name='signup'),
     path('login', views.login, name='login'),
-    path('logout', views.logout, name='logout'),
-    path('get-user-detail', views.get_details, name='user_details'),
+    path('do-login', views.do_login, name='do_login'),
 
-    ### admin urls
-    path('admin-home', AdminView.admin_dashboard),
+    ##########################################
+       ###    USER DASHBOARD PAGE URL ###
+    ##########################################                  #####
+    path('account-dashboard', AdminView.account_dashboard, name='account'),
+    path('add-account', AdminView.add_account, name='add_account'),
+    path('add_clients', AdminView.add_clients, name='add_clients'),
 ]

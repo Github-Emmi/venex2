@@ -21,7 +21,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-# AUTH_USER_MODEL = "app.CustomUser"
+AUTH_USER_MODEL = "app.CustomUser"
 # AUTHENTICATION_BACKENDS = ['app.EmailBackEnd.EmailBackEnd']
 
 INSTALLED_APPS = [

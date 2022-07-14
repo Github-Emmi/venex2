@@ -1,9 +1,12 @@
+from distutils.log import log
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
+from django.template import loader
+from django import template
 
 # Create your views here.
 
@@ -56,26 +59,46 @@ def signup(request):
      return render(request, 'jobs/signup.html', {})              
 
 def login(request):
-    if request.method == "POST":
-         username = request.POST['username']
-         password = request.POST['password']
-         user = authenticate(request, username=username, password=password)
-         if user!= None:
-              login(request,user)
-              return render(request, 'about.html')
-         else:
-              messages.error(request, "Please enter the correct email and password")
-              return render(request, 'login.html')
-    return render(request, 'login.html')         
+     return render(request, 'login.html')
+  
+         
+def do_login(request):
+      if request.method != "POST":
+         return HttpResponse('method Not Allowed')
+      else:   
+           user = authenticate(request, username= request.POST.get("email"), password=request.POST.get("password"))
+           if user!=None:
+                login(request, user)
+                return HttpResponseRedirect('user-dashboard') 
+           else:
+                messages.error(request, 'Please enter the correct username and password')
+                return redirect('login')
+           
 
 
-def get_details(request):
-    if request.user!= None:
-        return HttpResponse("Emial: "+request.user.email + " user_type: "+request.user.user_type)
-    else:
-        HttpResponse("login first")    
+####################################################################
 
-def logout(request):
-    logout(request)
-    return HttpResponseRedirect('/')
+          #Error page Catcher
 
+####################################################################
+
+@login_required(login_url="/login/")
+def pages(request):
+    context = {}
+    # All resource paths end in .html.
+    # Pick out the html file name from the url. And load that template.
+    try:
+        
+        load_template = request.path.split('/')[-1]
+        html_template = loader.get_template( load_template )
+        return HttpResponse(html_template.render(context, request))
+        
+    except template.TemplateDoesNotExist:
+
+        html_template = loader.get_template( 'jobs/page-404.html' )
+        return HttpResponse(html_template.render(context, request))
+
+    except:
+    
+        html_template = loader.get_template( 'jobs/page-500.html' )
+        return HttpResponse(html_template.render(context, request))
