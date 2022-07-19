@@ -545,6 +545,7 @@ span.color2 {
   [class*="formBlock"][class*="Light"] label {
     color: white; }
   [class*="formBlock"][class*="Light"] input[type="text"],
+  [class*="formBlock"][class*="Light"] input[type="date"],
   [class*="formBlock"][class*="Light"] input[type="number"],
   [class*="formBlock"][class*="Light"] input[type="password"],
   [class*="formBlock"][class*="Light"] input[type="email"],
@@ -568,6 +569,7 @@ span.color2 {
   [class*="formBlock"][class*="Dark"] label {
     color: #202b2f; }
   [class*="formBlock"][class*="Dark"] input[type="text"],
+  [class*="formBlock"][class*="Dark"] input[type="date"],
   [class*="formBlock"][class*="Dark"] input[type="number"],
   [class*="formBlock"][class*="Dark"] input[type="password"],
   [class*="formBlock"][class*="Dark"] input[type="email"],
@@ -587,9 +589,10 @@ span.color2 {
     font-weight: bold; }
     [class*="formBlock"] label.center {
       text-align: center; }
-    [class*="formBlock"] label + input[type="text"], [class*="formBlock"] label + input[type="number"], [class*="formBlock"] label + input[type="password"], [class*="formBlock"] label + input[type="email"], [class*="formBlock"] label + input[type="url"], [class*="formBlock"] label + textarea {
+    [class*="formBlock"] label + input[type="text"], [class*="formBlock"] label + input[type="number"], [class*="formBlock"] label + input[type="date"], [class*="formBlock"] label + input[type="password"], [class*="formBlock"] label + input[type="email"], [class*="formBlock"] label + input[type="url"], [class*="formBlock"] label + textarea {
       margin-top: 12px; }
   [class*="formBlock"] input[type="text"],
+  [class*="formBlock"] input[type="date"],
   [class*="formBlock"] input[type="number"],
   [class*="formBlock"] input[type="password"],
   [class*="formBlock"] input[type="email"],
@@ -609,6 +612,7 @@ span.color2 {
     box-shadow: inset 0px 3px 7px rgba(0, 0, 0, 0.07); }
   [class*="formBlock"] input[type="text"],
   [class*="formBlock"] input[type="number"],
+  [class*="formBlock"] input[type="date"],
   [class*="formBlock"] input[type="password"],
   [class*="formBlock"] input[type="email"],
   [class*="formBlock"] input[type="url"] {

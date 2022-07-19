@@ -14,13 +14,13 @@ urlpatterns = [
     path('sent/', views.sent, name='sent'),
     path('terms-and-conditions/', views.terms, name='terms'),
     path('signup/', views.signup, name='signup'),
-    path('login', views.login, name='login'),
-    path('do-login', views.do_login, name='do_login'),
+    path('login', views.user_login, name='login'),
+    path('do-login', views.DoLogin, name='do_login'),
 
     ##########################################
        ###    USER DASHBOARD PAGE URL ###
-    ##########################################                  #####
+    ##########################################  
     path('account-dashboard', AdminView.account_dashboard, name='account'),
-    path('add-account', AdminView.add_account, name='add_account'),
-    path('add_clients', AdminView.add_clients, name='add_clients'),
+    path('add-clients', AdminView.add_clients, name='add_clients'),
+    path('save_clients', AdminView.save_clients, name='save_clients'),
 ]

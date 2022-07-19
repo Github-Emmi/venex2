@@ -1,9 +1,10 @@
 from django.contrib import admin
-from app.models import CustomUser
 from django.contrib.auth.admin import UserAdmin
 
+from app.models import CustomUser
 # Register your models here.
+ 
 class UserModel(UserAdmin):
-    pass
+    pass 
 
 admin.site.register(CustomUser, UserAdmin)

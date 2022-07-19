@@ -150,7 +150,7 @@
     
     
      <br><center>
-    <form action="/add_clients" method="post" onsubmit="return checkform()" name="editform">
+    <form action="{% url 'save_clients' %}" method="post" onsubmit="return checkform()" name="editform">
               {% csrf_token %}
               {% if messages %}
                      <div class="col-12">
@@ -196,18 +196,25 @@
         <td>Your Home Address:</td>
         <td><input type="text" name="address" class="inpts" size="30"></td>
        </tr>
-    <tr>
-    <td>Date Joined:</td>
-    <td><input type="date" name="date-joined" class="inpts" size="30"></td>
-    </tr>
+       <div class ="form-group">
+        {% if messages %}                           
+        {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <div class="alert alert-danger" style="margin-top:10px">{{ message }} </div>
+        {% endif %}
+        {% if message.tags == 'success' %}
+        <div class="alert alert-success" style="margin-top:10px">{{ message }} </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+      </div>
     <tr>
      <td>&nbsp;</td>
      <td>
-     
-      <button type="submit" class="btnFillGradLg center">Create Account</button>
-      
-     </td>
-    </tr></tbody></table>
+      <button type="submit" class="btnFillGradLg center">Create Account</button></td>
+        
+    </tr>
+  </tbody></table>
     </form>
     </center>
     </div></div></div></div>

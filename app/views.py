@@ -1,4 +1,3 @@
-from distutils.log import log
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
@@ -7,6 +6,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.template import loader
 from django import template
+
+from app.EmailBackEnd import EmailBackEnd
+
+
 
 # Create your views here.
 
@@ -58,21 +61,20 @@ def sent(request):
 def signup(request):
      return render(request, 'jobs/signup.html', {})              
 
-def login(request):
-     return render(request, 'login.html')
-  
-         
-def do_login(request):
-      if request.method != "POST":
-         return HttpResponse('method Not Allowed')
-      else:   
-           user = authenticate(request, username= request.POST.get("email"), password=request.POST.get("password"))
-           if user!=None:
-                login(request, user)
-                return HttpResponseRedirect('user-dashboard') 
-           else:
-                messages.error(request, 'Please enter the correct username and password')
-                return redirect('login')
+def user_login(request):
+     return render(request, 'jobs/login.html', {})
+      
+def DoLogin(request):
+    if request.method != "POST":
+        return HttpResponse('<h2>Method Not Allowed</h2>')
+    else:
+        user = EmailBackEnd.authenticate(request,username=request.POST.get("email"), password=request.POST.get("password"))
+        if user!=None:
+            login(request, user) 
+            return HttpResponseRedirect("/account-dashboard")           
+        else:
+            messages.error(request, 'Invalid email or password')
+            return HttpResponseRedirect("/")
            
 
 
@@ -82,7 +84,7 @@ def do_login(request):
 
 ####################################################################
 
-@login_required(login_url="/login/")
+# @login_required(login_url="/login/")
 def pages(request):
     context = {}
     # All resource paths end in .html.
