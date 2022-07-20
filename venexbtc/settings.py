@@ -73,12 +73,12 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'venexbtc',
-        'USER': 'venexbtc',
-        'PASSWORD': 'venex_btc',
+        'NAME': 'heroku_3359daefedbcfb6',
+        'USER': 'b8ef458b7ba3f5',
+        'PASSWORD': '6bebd281',
         'PORT': '3306',
-        'HOST': 'localhost',
-    }
+        'HOST': 'us-cdbr-east-06.cleardb.net',
+    } 
 }
 
 
