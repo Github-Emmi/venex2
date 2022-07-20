@@ -1,0 +1,249 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Dashboard | Profile {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <link href="/static/assets/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+  <link href="{% static 'assets/css/dashboard.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/account.css' %}" rel="stylesheet">
+  
+{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="card-body">
+      <div class="alert alert-primary alert-dismissible fade show" role="alert"><em><strong>Welcome to Venex btc and crypto investment network. We work in several areas like Forex, Cryptos-investment, Binary options and stock of the financial market with our team of professional traders each working in its specific area.</strong></em>
+        <p><strong>Our goal is to reduce risks and guarantee a stable income for our investors and reinvestment of assets accrued through all our trading activities.        </strong></p>
+        <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      
+    </div>
+
+    <main class="c-main">
+      <div id="wrapper" class="wrapper-account">
+        <div class="grid_green50"></div>
+        <div class="account-left-panel">
+          <div class="top">
+            <div class="logo">
+                  <a href="https://worldfxco.com/?a=home">
+                      <img src="/static/assets/public/coin/logo-white.png" width="200" style="margin-right:100px;">
+                  </a>
+              </div>
+          </div> <!-- END OF TOP -->
+      </div> <!-- END OF ACCOUNT LEFT PANEL -->
+
+      <section class="header header-account">
+        <div class="header-acc-line">
+          <div class="container">
+              
+              <div class="col-md-9">
+                  <div class="datetime2">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      <span id="clock"></span>
+                  </div>
+                  <div class="working-hours">
+                      <i class="fa fa-calendar-o"></i> Working Hours : <b>09:00 AM to 05:00 PM GMT</b>
+                  </div>
+                  <div class="working-hours">
+                          <i class="fa fa-btc"></i> BTC Price : <b><span class="figure">$ <span class="btc-usd"><span class="price"></span></span></span></b>
+                      </div>
+              </div>
+          </div>
+      </div> <!-- end of header acc line -->
+      <div class="header-top">
+        <div class="container">
+            <div class="frow">
+                <div class="col-md-12">
+                    <div class="header-menu">
+
+<ul>
+<li><a href="https://worldfxco.com/?a=home"><span>Home</span></a></li>
+<li><a href="https://worldfxco.com/?a=about"><span>About Us</span></a></li>
+<li><a href="https://worldfxco.com/?a=faq"><span>FAQ</span></a></li>
+            <li><a href="https://worldfxco.com/?a=support"><span>Contact Us</span></a></li>
+<li><a href="https://worldfxco.com/?a=rules"><span>Terms</span></a></li>
+<br>
+<li class="reg-btn"><a href="https://worldfxco.com/?a=logout"><span><i></i>Log Out</span></a></li>
+
+            </ul>
+
+</div> <!-- end of header menu -->
+   </div>
+            </div>
+        </div>
+    </div> <!-- end of header top -->
+      </section> <!-- end of header header-account -->
+         {% block Profile %}
+      <section class="main-account-out">
+        <div class="main-account">
+          <div>
+            <div class="container">
+              <div class="frow">
+                <div class="col-md-12">
+                    <h2 class="account-title">Dashboard</h2>
+                </div>
+            </div>
+            <div class="frow">
+              <div class="col-md-12">
+                  <div class="balance-list">
+                    <ul>
+                          <li>
+                              <div class="balance-box balance-box-main">$<b>0.00</b><span>Account Balance</span></div>
+                          </li>
+                          <li>
+                              <div class="balance-box">$<b>0.00</b><span>Active Deposits</span></div>
+                          </li>
+                          <li>
+                              <div class="balance-box">$<b>0.00</b><span>Total Earnings</span></div>
+                          </li>
+                          <li>
+                              <div class="balance-box">$<b>0.00</b><span>Pending Withdrawals</span></div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="frow">
+            <div class="clearfix"></div>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box-account-table">
+            <table class="table table-list">
+                <thead>
+                <tr>
+                    <th colspan="2"><i class="icon-params"></i> Profile Information
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                 <tr>
+                    <td>User Name :</td>
+                    <td><b>{{ user.username }}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email :</td>
+                    <td><b>{{ user.email }}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wallet Address :</td>
+                    <td><b>{{ user.wallet_address }}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone Number :</td>
+                    <td><b>{{ user.phone_no}} </b>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Regd Date :</td>
+                  <td><b>{{ user.phone_no}} </b>
+                  </td>
+              </tr>
+                
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end of row (profile information)-->
+<br>
+<br>
+<div class="frow">
+    <div class="col-md-6">
+        <div class="box-account-table">
+            <table class="table table-list">
+                <thead>
+                <tr>
+                    <th colspan="2"><i class="icon-params"></i> Deposit Information
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Total Deposits</td>
+                    <td class="text-bold">$<b>0.00</b></td>
+                </tr>
+                <tr>
+                    <td>Active Deposits</td>
+                    <td class="text-bold">$<b>0.00</b></td>
+
+                </tr>
+                <tr>
+                    <td>Last Deposit</td>
+                    <td class="text-bold">
+                                                   $<b>n/a</b> &nbsp; <small>n/a</small>
+                                            </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box-account-table">
+            <table class="table table-list">
+                <thead>
+                <tr>
+                    <th colspan="2"><i class="icon-params"></i> Withdrawals Information
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Total Withdrawals</td>
+                    <td class="text-bold">$<b>0.00</b></td>
+                </tr>
+                <tr>
+                    <td>Pending Withdrawal</td>
+                    <td class="text-bold">
+                       $<b>0.00</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Withdrawal</td>
+                    <td class="text-bold">
+                                                  $<b>n/a</b> &nbsp; <small>n/a</small>
+                        
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+          </div> <!-- end of main frow -->
+            </div>
+          </div>
+        </div>
+      </section> <!-- end of main account-out -->
+      {% endblock %}
+
+      </div>  <!-- END OF WRAPPER -->
+    </main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="/static/assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js"></script>
+    <script src="/static/assets/vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+    <script src="/static/assets/js/rate.js"></script>
+    <script src="/static/assets/js/time.js"></script>
+
+{% endblock javascripts %}
