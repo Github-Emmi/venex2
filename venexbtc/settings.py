@@ -31,7 +31,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
+    'storages',
 ]
+
+AWS_STORAGE_BUCKET_NAME = 'django-febmex-school-1'
+AWS_S3_REGION_NAME = 'us-east-1' # e.g. us-east-1
+AWS_ACCESS_KEY_ID = 'AKIAWU6GPAAKHDLSGVQL'
+AWS_SECRET_ACESS_KEY = 'i3HcCHFknV8dgGzAvkM2pWobJoReMaqv3Lm0dQ4E'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
