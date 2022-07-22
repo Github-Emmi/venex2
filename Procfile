@@ -1,2 +1,2 @@
-release: ./release.sh
+release: python manage.py
 web: gunicorn venexbtc.wsgi
