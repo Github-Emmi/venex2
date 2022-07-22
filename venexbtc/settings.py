@@ -13,9 +13,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ax@l0a--!26zj)y27))1%&ex^z#%hc(0*nuyrb*zc_4_m)to5&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = False
 
 ALLOWED_HOSTS = ['guarded-ridge-21631.herokuapp.com',]
+=======
+DEBUG = True
+
+ALLOWED_HOSTS = []
+>>>>>>> 8a523609b7bb04b3c2d4726d97d6a63c748462d3
 
 
 # Application definition
@@ -31,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
+<<<<<<< HEAD
     'storages',
 ]
 
@@ -47,6 +54,10 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
+=======
+]
+
+>>>>>>> 8a523609b7bb04b3c2d4726d97d6a63c748462d3
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,6 +98,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
+<<<<<<< HEAD
         'NAME': 'heroku_3359daefedbcfb6',
         'USER': 'b8ef458b7ba3f5',
         'PASSWORD': '6bebd281',
@@ -94,6 +106,15 @@ DATABASES = {
         'HOST': 'us-cdbr-east-06.cleardb.net',
     } 
 }       
+=======
+        'NAME': 'venexbtc',
+        'USER': 'venexbtc',
+        'PASSWORD': 'venex_btc',
+        'PORT': '3306',
+        'HOST': 'localhost',
+    }
+}
+>>>>>>> 8a523609b7bb04b3c2d4726d97d6a63c748462d3
 
 
 # Password validation
