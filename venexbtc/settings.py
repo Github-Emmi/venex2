@@ -92,8 +92,10 @@ DATABASES = {
         'PASSWORD': '6bebd281',
         'PORT': '3306',
         'HOST': 'us-cdbr-east-06.cleardb.net',
-        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-    } 
+        'OPTIONS': {
+            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'",
+        },
+    },
 }       
 
 
