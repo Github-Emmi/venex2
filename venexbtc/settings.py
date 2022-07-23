@@ -34,20 +34,29 @@ INSTALLED_APPS = [
     'storages',
 ]
 
-AWS_STORAGE_BUCKET_NAME = 'venexbtc'
-AWS_S3_REGION_NAME = 'us-east-1' # e.g. us-east-1
-AWS_ACCESS_KEY_ID = 'AKIAWU6GPAAKHRC7GJWX'
-AWS_SECRET_ACESS_KEY = '11pTZacOSYtYtTBZSmbEmyme/iZAEyFXbiJs8SDM'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_DEFAULT_ACL = None
+# AWS_STORAGE_BUCKET_NAME = 'venexbtc'
+# AWS_S3_REGION_NAME = 'us-east-1' # e.g. us-east-1
+# AWS_ACCESS_KEY_ID = 'AKIAWU6GPAAKHRC7GJWX'
+# AWS_SECRET_ACESS_KEY = '11pTZacOSYtYtTBZSmbEmyme/iZAEyFXbiJs8SDM'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_DEFAULT_ACL = None
 
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+# STATICFILES_LOCATION = 'static'
+# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
  
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+# MEDIAFILES_LOCATION = 'media'
+# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 MIDDLEWARE = [
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
