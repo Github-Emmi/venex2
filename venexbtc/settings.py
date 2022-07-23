@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
-    'storages',
 ]
 
 # AWS_STORAGE_BUCKET_NAME = 'venexbtc'
