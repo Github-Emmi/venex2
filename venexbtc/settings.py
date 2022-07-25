@@ -1,6 +1,10 @@
-import os
+"""
+venexbtc settings configurations lives here
+"""
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,18 +14,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ax@l0a--!26zj)y27))1%&ex^z#%hc(0*nuyrb*zc_4_m)to5&'
+SECRET_KEY = 'django-insecure-%e-1ai729qte1z$ey05&)4xyi7_=v4jfmjtmzadkyo58acrftd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['guarded-ridge-21631.herokuapp.com',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
-AUTH_USER_MODEL = "app.CustomUser"
-AUTHENTICATION_BACKENDS = ['app.EmailBackEnd.EmailBackEnd']
+
+AUTH_USER_MODEL = "venex_app.CustomUser"
+AUTHENTICATION_BACKENDS = ['venex_app.EmailBackEnd.EmailBackEnd']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,32 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppConfig',
+    'venex_app',
 ]
 
-# AWS_STORAGE_BUCKET_NAME = 'venexbtc'
-# AWS_S3_REGION_NAME = 'us-east-1' # e.g. us-east-1
-# AWS_ACCESS_KEY_ID = 'AKIAWU6GPAAKHRC7GJWX'
-# AWS_SECRET_ACESS_KEY = '11pTZacOSYtYtTBZSmbEmyme/iZAEyFXbiJs8SDM'
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-# AWS_DEFAULT_ACL = None
-
-# STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
- 
-# MEDIAFILES_LOCATION = 'media'
-# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-
-
 MIDDLEWARE = [
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,7 +49,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'venexbtc.urls'
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'app/templates/jobs')
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'venex_app/templates/jobs')
+
 
 TEMPLATES = [
     {
@@ -93,18 +77,18 @@ WSGI_APPLICATION = 'venexbtc.wsgi.application'
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_3359daefedbcfb6',
-        'USER': 'b8ef458b7ba3f5',
-        'PASSWORD': '6bebd281',
+        'NAME': 'venexdb',
+        'USER': 'venexuser',
+        'PASSWORD': 'venex_password',
         'PORT': '3306',
-        'HOST': 'us-cdbr-east-06.cleardb.net',
+        'HOST': 'localhost',
         'OPTIONS': {
             'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'",
         },
     },
-}       
+}
 
 
 # Password validation
@@ -144,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Media folder
 
@@ -152,17 +136,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'app/static'),
+    os.path.join(BASE_DIR, 'venex_app/static'),
 )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Email settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'kleven.wilson@gmail.com'
-EMAIL_HOST_PASSWORD = 'arfiybwmmeblagzl'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
